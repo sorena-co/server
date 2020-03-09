@@ -1,6 +1,7 @@
 const express = require('express');
 const indexRoute = require('./routes/index');
 const userRoute = require('./routes/user');
+const talentRoute = require('./routes/talent');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
@@ -13,5 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/', indexRoute);
 app.use('/user', userRoute);
+app.use('/talent', talentRoute);
 
 module.exports = app;

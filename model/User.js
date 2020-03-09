@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+const packageSchema = require('./Talent');
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -27,7 +28,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         trim: true,
-    }
+    },
+    talents: [{type: mongoose.Schema.ObjectId, ref: 'Talent'}]
 });
 
 module.exports = mongoose.model('User', userSchema);
